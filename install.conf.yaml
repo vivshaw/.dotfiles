@@ -1,4 +1,4 @@
-- clean: ['~']
+- clean: ["~"]
 
 - link:
     ~/.profile: profile
@@ -6,4 +6,12 @@
     ~/.bash_logout: bash_logout
     ~/.zshrc: zshrc
 
-
+- shell:
+    - description: oh-my-zsh
+      command: '[ -z "$ZSH_VERSION" ] && sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh) --unattended" || :'
+      stdout: true
+      stdin: true
+    - description: change shells
+      command: sudo chsh -s /usr/local/bin/zsh calvin
+      stdout: true
+      stdin: true
